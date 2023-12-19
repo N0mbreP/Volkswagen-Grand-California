@@ -1,7 +1,13 @@
 import java.util.*
 
-fun precioActual(preuCoche:Double, km:Double):Double{
-    val resultat: Double = preuCoche * 0.00001f * km
+fun precioActual(preuCoche:Double, km:Double, anys:Int, portaBici:Boolean):Double{
+    var resultat:Double=preuCoche
+    if (portaBici) resultat+=250
+    when(anys){
+        in 0..5-> resultat = resultat*0.0001f * km
+        in 6..10->resultat = resultat*0.0002f * km
+        else ->resultat = resultat*0.0004f * km
+    }
     return resultat
 }
 
