@@ -1,16 +1,39 @@
 import java.util.*
 
-fun precioActual(preuCoche:Double, km:Double, anys:Int, portaBici:Boolean):Double{
+fun precioActual(preuCoche:Double, kmVeicle:Double, anysVeicle:Int, portaBici:Boolean, kmPneumatic: Float):Double{
     var resultat:Double=preuCoche
     if (portaBici) resultat+=250
-    when(anys){
-        in 0..5-> resultat = resultat*0.0001f * km
-        in 6..10->resultat = resultat*0.0002f * km
-        else ->resultat = resultat*0.0004f * km
+    when(anysVeicle){
+        in 0..5-> resultat *= 0.0001f * kmVeicle
+        in 6..10-> resultat *= 0.0002f * kmVeicle
+        else -> resultat *= 0.0004f * kmVeicle
     }
+    if (kmPneumatic<5000){
+        return resultat
+    }else if(kmPneumatic>10000){
+        resultat-=200
+        return resultat
+    }
+    resultat-=300
     return resultat
 }
 
+fun llegirFloat(textoMenu:String):Float{
+    val scan= Scanner(System.`in`)
+    var numeroLlegit:Float=0.0f
+    println(textoMenu)
+    do {
+        var valorCorrecte:Boolean=scan.hasNextFloat()
+        if (!valorCorrecte){
+            scan.nextLine()
+            println("Introdueix un numero enter")
+        }else{
+            numeroLlegit=scan.nextFloat()
+            scan.nextLine()
+        }
+    }while (!valorCorrecte)
+    return numeroLlegit
+}
 
 fun llegirInt(textoMenu:String):Int{
     val scan= Scanner(System.`in`)
@@ -61,15 +84,20 @@ fun llegirLong(textoMenu:String):Long{
     }while (!valorCorrecte)
     return numeroLlegit
 }
-
-fun preuNeumatics(km:Double, preuCoche: Double):Double{
-    var preuFinal:Double=preuCoche
-    if (km<5000){
-        return preuFinal
-    }else if(km>10000){
-        preuFinal-=200
-        return preuFinal
-    }
-    preuFinal-=300
-    return preuFinal
+fun llegirBoolean(textoMenu:String):Boolean{
+    val scan= Scanner(System.`in`)
+    var booleanLlegit:Boolean=false
+    println(textoMenu)
+    do {
+        var valorCorrecte:Boolean=scan.hasNextBoolean()
+        if (!valorCorrecte){
+            scan.nextLine()
+            println("Introdueix un numero enter")
+        }else{
+            booleanLlegit=scan.nextBoolean()
+            scan.nextLine()
+        }
+    }while (!valorCorrecte)
+    return booleanLlegit
 }
+

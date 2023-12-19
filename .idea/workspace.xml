@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="650a558c-e3c5-4d8a-9d59-fab4d5150f8f" name="Changes" comment="Primer comit tot descarregat">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="650a558c-e3c5-4d8a-9d59-fab4d5150f8f" name="Changes" comment="Actualitzat la funcio precioActual del fitxer Funciones.kt de forma correcte">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Funciones.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Funciones.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +76,20 @@
       <option name="project" value="LOCAL" />
       <updated>1702972706608</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Actualitzat la funcio precioActual del fitxer Funciones.kt de forma correcte">
+      <option name="closed" value="true" />
+      <created>1702976143616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702976143616</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer comit tot descarregat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primer comit tot descarregat" />
+    <MESSAGE value="Actualitzat la funcio precioActual del fitxer Funciones.kt de forma correcte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualitzat la funcio precioActual del fitxer Funciones.kt de forma correcte" />
   </component>
 </project>
