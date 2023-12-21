@@ -157,12 +157,11 @@ fun llegirBoolean(textMostrar:String):Boolean{
  * @param optionTrue , It defines the number it will return true (Int)
  * @return numeroLlegit , Output value (Float)
  */
-fun llegirIntReturnBoolean(textMostrar:String, optionTrue:Int):Boolean{
+fun llegirIntReturnBoolean(textMostrar:String, optionTrue:Int=1):Boolean{
     val scan= Scanner(System.`in`)
     var numeroLlegit:Int=0
     var trueFlase:Boolean=false
     println(textMostrar)
-
     do {
         var valorCorrecte:Boolean=scan.hasNextInt()
         if (!valorCorrecte){
@@ -172,7 +171,7 @@ fun llegirIntReturnBoolean(textMostrar:String, optionTrue:Int):Boolean{
             numeroLlegit=scan.nextInt()
             scan.nextLine()
         }
-    }while (!valorCorrecte && numeroLlegit!=1 || numeroLlegit!=2)
+    }while (!valorCorrecte)
 
     if (numeroLlegit==optionTrue){
         trueFlase=true
@@ -181,3 +180,21 @@ fun llegirIntReturnBoolean(textMostrar:String, optionTrue:Int):Boolean{
     return trueFlase
 }
 
+/**
+ * This function creates a String of characters
+ * @author pol.paredes (N0mbreP)
+ * @since 21/12/2023
+ * @param repes , determines how many times the character repeats (Reads Int)
+ * @param caracter , is the character that will repeat in a straight line (Reads Char)
+ * @return retornar , Output value (String)
+ */
+fun lineaSeparadora(repes:Int, caracter:Char):String{
+    var contador:Int=0
+    var retornar:String=""
+    do {
+        retornar+=caracter.toString()
+        contador++
+    }while (contador!=repes)
+
+    return retornar
+}

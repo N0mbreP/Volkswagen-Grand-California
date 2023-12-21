@@ -1,15 +1,19 @@
 fun main() {
+    val optionTrueIntBoolean:Int=1
     benvinGuda()
-    var  model:Int = llegirInt("Si tens una Volkswagen Grand California escriu 1, si tens una Volkswagen Grand California Full Equip escriu 2.")
+    var  model:Int = llegirInt("Si tens una Volkswagen Grand California escriu 1," +
+            " si tens una Volkswagen Grand California Full Equip escriu 2.")
     var km:Double= llegirDouble("Introdueix el número de km que té el vehicle:")
     var kmPn:Float=llegirFloat("Introdueix el número de km que tenen els neumatics:")
-    var portaBici:Boolean=llegirIntReturnBoolean("Introdueix si el teu veicle te un porta bicis (1 per indicar que si i 2 per indicar que no):",optionTrue = 1 )
-    var anysVehicle:Int=llegirInt("Inrodueix els anys del teu veicle (amb numeros)")
+    var portaBici:Boolean=llegirIntReturnBoolean("Introdueix si el teu veicle te un portabicis" +
+            " (1 per indicar que si i 2 per indicar que no):",optionTrue = optionTrueIntBoolean )
+    var anysVehicle:Int=llegirInt("Inrodueix els anys del teu veicle de forma numerica")
     var preuFinal:Double
     preuFinal=preuF( kmVeicle = km, kmPneumatic = kmPn, anysVeicle = anysVehicle, portaBici = portaBici, model = model)
 
 
     println("El preu final tenint en compte que el vehicle te $km, és de $preuFinal€")
+    println("Gracies per utilitzar l'aplicació, fins la propera.")
 
 }
 
@@ -33,9 +37,10 @@ fun benvinGuda(){
             "  wVWV   \\_  /  \\  _/   WVWv\n" +
             "   vwVWV  \\_/    \\_/  WVWvw\n" +
             "     vwVWV          WVWvw\n" +
-            "       vwVWVWVWVWVWVWvw")
+            "       vwVWVWVWVWVWVWvw" + RESET)
+    println(WHITE_BACKGROUND+lineaSeparadora(repes=224, caracter =' ')+RESET)
+    println("Benvingut a l'aplicació per calcular el valor de mercat de la teva furgoneta Volkswagen Grand California.")
     println()
-    println("Benvingut a l'aplicació per calcular el valor de mercat.")
 
 }
 
@@ -54,10 +59,12 @@ fun preuF(kmVeicle:Double, anysVeicle:Int, portaBici:Boolean, kmPneumatic: Float
     var preuResultat:Double=0.0
     if (model == 1) {
         var preuinicial:Double = 73490.0
-        preuResultat = precioActual(preuCoche = preuinicial, kmVeicle = kmVeicle, kmPneumatic = kmPneumatic, anysVeicle = anysVeicle, portaBici = portaBici)
+        preuResultat = precioActual(preuCoche = preuinicial, kmVeicle = kmVeicle, kmPneumatic = kmPneumatic,
+           anysVeicle = anysVeicle, portaBici = portaBici)
     } else if (model == 2) {
         var preuinicial:Double = 93490.0
-        preuResultat = precioActual(preuCoche = preuinicial, kmVeicle = kmVeicle, kmPneumatic = kmPneumatic, anysVeicle = anysVeicle, portaBici = portaBici)
+        preuResultat = precioActual(preuCoche = preuinicial, kmVeicle = kmVeicle, kmPneumatic = kmPneumatic,
+           anysVeicle = anysVeicle, portaBici = portaBici)
 
     } else {
         println("ERROR: Valor introduït incorrecte, reinicia l'aplicació")
