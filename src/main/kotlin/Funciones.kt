@@ -1,5 +1,16 @@
 import java.util.*
 
+/**
+ * This function is used for calculate the vehicle price
+ *@author pol.paredes
+ *@since 21/12/2023
+ *@param preuCoche,reads the vehicle price (Reads a double)
+ *@param anysVeicle, how old it is the van (Reads an Int)
+ *@param kmVeicle,  the km for the vehicle (Reads a Double)
+ *@param kmPneumatic, the wheels km (Reads a Float)
+ *@param portaBici, reads if it have a bike rack (Reads a Boolean)
+ *@return resultat , Output value (Double)
+ */
 fun precioActual(preuCoche:Double, kmVeicle:Double, anysVeicle:Int, portaBici:Boolean, kmPneumatic: Float):Double{
     var resultat:Double=preuCoche
     if (portaBici) resultat+=250
@@ -18,10 +29,17 @@ fun precioActual(preuCoche:Double, kmVeicle:Double, anysVeicle:Int, portaBici:Bo
     return resultat
 }
 
-fun llegirFloat(textoMenu:String):Float{
+/**
+ * llegirFloat is used to read a Float using the Scanner and returns the read Float
+ * @author pol.paredes
+ * @since 21/12/2023
+ * @param textMostrar , It shows a String (Usually what the user have to do)
+ * @return numeroLlegit , Output value (Float)
+ */
+fun llegirFloat(textMostrar:String):Float{
     val scan= Scanner(System.`in`)
     var numeroLlegit:Float=0.0f
-    println(textoMenu)
+    println(textMostrar)
     do {
         var valorCorrecte:Boolean=scan.hasNextFloat()
         if (!valorCorrecte){
@@ -35,10 +53,17 @@ fun llegirFloat(textoMenu:String):Float{
     return numeroLlegit
 }
 
-fun llegirInt(textoMenu:String):Int{
+/**
+ * llegirInt is used to read a Int using the Scanner and returns the read Int
+ * @author pol.paredes
+ * @since 21/12/2023
+ * @param textMostrar , It shows a String (Usually what the user have to do)
+ * @return numeroLlegit , Output value (Int)
+ */
+fun llegirInt(textMostrar:String):Int{
     val scan= Scanner(System.`in`)
     var numeroLlegit:Int=0
-    println(textoMenu)
+    println(textMostrar)
     do {
         var valorCorrecte:Boolean=scan.hasNextInt()
         if (!valorCorrecte){
@@ -52,10 +77,17 @@ fun llegirInt(textoMenu:String):Int{
     return numeroLlegit
 }
 
-fun llegirDouble(textoMenu:String):Double{
+/**
+ * llegirDouble is used to read a Double using the Scanner and returns the read Double
+ * @author pol.paredes
+ * @since 21/12/2023
+ * @param textMostrar , It shows a String (Usually what the user have to do)
+ * @return numeroLlegit , Output value (Double)
+ */
+fun llegirDouble(textMostrar:String):Double{
     val scan= Scanner(System.`in`)
     var numeroLlegit:Double=0.0
-    println(textoMenu)
+    println(textMostrar)
     do {
         var valorCorrecte:Boolean=scan.hasNextDouble()
         if (!valorCorrecte){
@@ -68,10 +100,18 @@ fun llegirDouble(textoMenu:String):Double{
     }while (!valorCorrecte)
     return numeroLlegit
 }
-fun llegirLong(textoMenu:String):Long{
+
+/**
+ * llegirLong is used to read a Long using the Scanner and returns the read Long
+ * @author pol.paredes
+ * @since 21/12/2023
+ * @param textMostrar , It shows a String (Usually what the user have to do)
+ * @return numeroLlegit , Output value (Long)
+ */
+fun llegirLong(textMostrar:String):Long{
     val scan= Scanner(System.`in`)
     var numeroLlegit:Long=0
-    println(textoMenu)
+    println(textMostrar)
     do {
         var valorCorrecte:Boolean=scan.hasNextLong()
         if (!valorCorrecte){
@@ -84,10 +124,18 @@ fun llegirLong(textoMenu:String):Long{
     }while (!valorCorrecte)
     return numeroLlegit
 }
-fun llegirBoolean(textoMenu:String):Boolean{
+
+/**
+ * llegirBoolean is used to read a Boolean using the Scanner and returns the read Boolean
+ * @author pol.paredes
+ * @since 21/12/2023
+ * @param textMostrar , It shows a String (Usually what the user have to do)
+ * @return booleanLlegit , Output value (Boolean)
+ */
+fun llegirBoolean(textMostrar:String):Boolean{
     val scan= Scanner(System.`in`)
     var booleanLlegit:Boolean=false
-    println(textoMenu)
+    println(textMostrar)
     do {
         var valorCorrecte:Boolean=scan.hasNextBoolean()
         if (!valorCorrecte){
@@ -99,5 +147,37 @@ fun llegirBoolean(textoMenu:String):Boolean{
         }
     }while (!valorCorrecte)
     return booleanLlegit
+}
+
+/**
+ * llegirIntReturnBoolean is used to read a Int using the Scanner and returns the read Float
+ * @author pol.paredes
+ * @since 21/12/2023
+ * @param textMostrar , It shows a String (Usually what the user have to do)
+ * @param optionTrue , It defines the number it will return true (Int)
+ * @return numeroLlegit , Output value (Float)
+ */
+fun llegirIntReturnBoolean(textMostrar:String, optionTrue:Int):Boolean{
+    val scan= Scanner(System.`in`)
+    var numeroLlegit:Int=0
+    var trueFlase:Boolean=false
+    println(textMostrar)
+
+    do {
+        var valorCorrecte:Boolean=scan.hasNextInt()
+        if (!valorCorrecte){
+            scan.nextLine()
+            println("Introdueix un numero enter")
+        }else{
+            numeroLlegit=scan.nextInt()
+            scan.nextLine()
+        }
+    }while (!valorCorrecte && numeroLlegit!=1 || numeroLlegit!=2)
+
+    if (numeroLlegit==optionTrue){
+        trueFlase=true
+        return trueFlase
+    }
+    return trueFlase
 }
 
